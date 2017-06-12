@@ -1,0 +1,24 @@
+﻿@model TRiO.ViewModels.HomeViewModel
+
+@{
+    ViewBag.Title = "Sign In";
+}
+
+<div class="logoBG text-center">
+        <h1>Welcome!</h1>
+        <h3>Swipe your card or enter your student ID to sign in.</h3>
+
+        @using (Html.BeginForm("CreateSession", "Home", FormMethod.Post))
+        {
+            <div class="form-group">
+                <center>
+                    <br />
+                    @Html.TextBoxFor(m => m.Id, new { @class = "form-control", autofocus = "" })
+                    <br />
+                </center>
+            </div>
+            <center>
+                <button class="btn btn-success btn-lg" type="submit">SIGN IN</button>
+            </center>
+        }
+</div>

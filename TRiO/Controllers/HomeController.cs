@@ -27,6 +27,7 @@ namespace TRiO.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult CreateSession(HomeViewModel viewModel)
         {
             var isRegisteredStudent = _context.Students.Where(m => m.StudentId == viewModel.Id || m.CardNumber == viewModel.Id).FirstOrDefault();
@@ -39,6 +40,7 @@ namespace TRiO.Controllers
             else
             {
                 ModelState.Clear();
+                ViewBag.Message = "false";
                 return View("Index");
             }
         }

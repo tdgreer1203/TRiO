@@ -2,6 +2,26 @@
 
 @{
     ViewBag.Title = "Sign In";
+
+    if (ViewBag.Message == "false")
+    {
+        <script>
+            document.getElementById("failModal").style.display = 'block';
+        </script>
+    }
+    else if (ViewBag.Message == "true")
+    {
+        <script>
+            document.getElementById("successModal").style.display = 'block';
+        </script>
+    }
+    else
+    {
+        <script>
+            document.getElementById("failModal").style.display = 'none';
+            document.getElementById("successModal").style.display = 'none';
+        </script>
+    }
 }
 
 <div class="logoBG text-center">
@@ -21,4 +41,48 @@
                 <button class="btn btn-success btn-lg" type="submit">SIGN IN</button>
             </center>
         }
+</div>
+
+<!-- Fail Modal -->
+<div class="modal fade" id="failModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Signin Failed</h4>
+            </div>
+            <div class="modal-body">
+                <p>We did not find your account in the system. Please register and then sign in.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">REGISTER</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Signin Failed</h4>
+            </div>
+            <div class="modal-body">
+                <p>We did not find your account in the system. Please register and then sign in.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">REGISTER</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">CLOSE</button>
+            </div>
+        </div>
+
+    </div>
 </div>

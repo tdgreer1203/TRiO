@@ -19,7 +19,7 @@ namespace TRiO.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            _context.Dispose(); 
+            _context.Dispose();
         }
 
         public ActionResult Index()
@@ -27,21 +27,21 @@ namespace TRiO.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CreateSession(HomeViewModel viewModel)
+        // you will receive the id instead of the object ,then you can get the object by query string if you needed
+        public ActionResult CreateSession(string id)
         {
-            var isRegisteredStudent = _context.Students.Where(m => m.StudentId == viewModel.Id || m.CardNumber == viewModel.Id).FirstOrDefault();
+            var isRegisteredStudent = _context.Students.Where(m => m.StudentId == id || m.CardNumber == id).FirstOrDefault();
 
             if (isRegisteredStudent != null)
             {
-                //Sign the student in.
-                return View("StartSession");
+                //Sign the student in.             
+                return PartialView("_Success");
             }
             else
             {
                 ModelState.Clear();
-                ViewBag.Message = "false";
-                return View("Index");
+                // return View("Index");
+                return PartialView("_Failed");
             }
         }
     }

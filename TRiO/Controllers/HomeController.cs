@@ -27,21 +27,21 @@ namespace TRiO.Controllers
             return View();
         }
 
-        // you will receive the id instead of the object ,then you can get the object by query string if you needed
-        public ActionResult CreateSession(string id)
+        [HttpPost]
+        public ActionResult CreateSession(HomeViewModel viewModel)
         {
-            var isRegisteredStudent = _context.Students.Where(m => m.StudentId == id || m.CardNumber == id).FirstOrDefault();
+            var isRegisteredStudent = _context.Students.Where(m => m.StudentId == viewModel.Id || m.CardNumber == viewModel.Id).FirstOrDefault();
 
             if (isRegisteredStudent != null)
             {
-                //Sign the student in.             
-                return PartialView("_Success");
+                viewModel.accountFound = true;
+                return View("Index", viewModel);
             }
             else
             {
                 ModelState.Clear();
-                // return View("Index");
-                return PartialView("_Failed");
+                viewModel.accountFound = false;
+                return View("Index", viewModel);
             }
         }
     }

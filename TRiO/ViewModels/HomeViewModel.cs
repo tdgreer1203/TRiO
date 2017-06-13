@@ -8,5 +8,6 @@ namespace TRiO.ViewModels
     public class HomeViewModel
     {
         public string Id { get; set; }
+        public bool accountFound { get; set; }
     }
 }

@@ -1,0 +1,15 @@
+﻿
+@{
+    Layout = null;
+}
+<div style="height:150px;">
+    <div class="modal-header" id="failModalHeader">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Login Failed</h4>
+    </div>
+    <div class="modal-body" id="failModalBody">
+        <p>User not found. Please make sure you've entered the correct student id number.</p>
+        @Html.ActionLink("REGISTER", "Index", "Register", null, new { @class="btn btn-primary" })
+        <button class="btn btn-danger pull-right" type="button" data-dismiss="modal">CLOSE</button>
+    </div>
+</div>

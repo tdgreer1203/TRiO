@@ -27,8 +27,14 @@
     padding: 0;
 }
 
-.hiddenButton {
-    display: none;
+#failModalHeader {
+    background-color: #d2322d; 
+    color: white;
+}
+
+#successModalHeader {
+    background-color: #5cb85c;
+    color: white;
 }
 
 body, html {

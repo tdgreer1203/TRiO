@@ -27,21 +27,19 @@ namespace TRiO.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CreateSession(HomeViewModel viewModel)
+        public ActionResult CreateSession(string id)
         {
-            var isRegisteredStudent = _context.Students.Where(m => m.StudentId == viewModel.Id || m.CardNumber == viewModel.Id).FirstOrDefault();
+            var isRegisteredStudent = _context.Students.Where(m => m.StudentId == id || m.CardNumber == id).FirstOrDefault();
 
             if (isRegisteredStudent != null)
             {
-                viewModel.accountFound = true;
-                return View("Index", viewModel);
+                //Sign student in.
+                return PartialView("_Success");
             }
             else
             {
                 ModelState.Clear();
-                viewModel.accountFound = false;
-                return View("Index", viewModel);
+                return PartialView("_Failed");
             }
         }
     }

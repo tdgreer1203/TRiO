@@ -17,6 +17,9 @@ namespace TRiO.Models
         [Required(ErrorMessage = "Please enter your last name."), MaxLength(50), Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [MaxLength(2), Display(Name = "Middle Initial")]
+        public char MiddleInitial { get; set; }
+
         [Required(ErrorMessage = "Please enter your email address."), MaxLength(75), EmailAddress, Display(Name = "Email Address")]
         public string Email { get; set; }
 

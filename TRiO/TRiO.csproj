@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201706110314574_PopulateBuildings.Designer.cs">
       <DependentUpon>201706110314574_PopulateBuildings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706150722224_AddedMIToStudent.cs" />
+    <Compile Include="Migrations\201706150722224_AddedMIToStudent.Designer.cs">
+      <DependentUpon>201706150722224_AddedMIToStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Building.cs" />
@@ -300,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706110314574_PopulateBuildings.resx">
       <DependentUpon>201706110314574_PopulateBuildings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706150722224_AddedMIToStudent.resx">
+      <DependentUpon>201706150722224_AddedMIToStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -196,3 +196,4 @@ C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.Migrations.PopulateBuild
 C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.csproj.GenerateResource.Cache
 C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.dll
 C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.pdb
+C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.Migrations.AddedMIToStudent.resources

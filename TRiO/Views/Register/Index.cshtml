@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <br />
-                    <label for="MiddleInitial">Last Name:</label>
+                    <label for="LastName">Last Name:</label>
                     @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Enter Last Name" })
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="form-group col-md-4">
                     <br />
-                    <label for="MiddleInitial">Email:</label>
+                    <label for="Email">Email:</label>
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter Email Address" })
                 </div>
                 <div class="form-group col-md-4 col-md-offset-3">
@@ -49,13 +49,75 @@
             <div class="form-group">
                 <br />
                 <label for="CardNumber">Card Number:</label>
-                @Html.TextBoxFor(m => m.MiddleInitial, new { @class = "form-control", @placeholder = "Enter Card Number" })
+                @Html.TextBoxFor(m => m.CardNumber, new { @class = "form-control", @placeholder = "Enter Card Number" })
                 <small id="emailHelp" class="form-text text-muted">Swipe your card to enter this information.</small>
-</div>
-        <br />
-        <center>
-            <button style="display: block; width: 100%; height: 75px;" class="anchorAlert btn btn-success btn-lg" type="button">REGISTER</button>
-        </center>
+            </div>
+            <br />
+            <center>
+                <button style="display: block; width: 100%; height: 75px;" class="anchorAlert btn btn-success btn-lg" type="button">REGISTER</button>
+            </center>
         }
     </div>
 </div>
+
+@* popup modal *@
+<div id='myModal' class='modal fade' aria-hidden="true" style="display:none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+
+
+
+        var TeamEditPostBackURL = '/Register/CreateStudent';
+        $(function () {
+            $(".anchorAlert").click(function () {
+                var $buttonClicked = $(this);
+                var firstName = $('#FirstName').val();
+                var middleInitial = $('#MiddleInitial').val();
+                var lastName = $('#LastName').val();
+                var email = $('#Email').val();
+                var phone = $('#Phone').val();
+                var studentId = $('#StudentId').val();
+                var cardNumber = $('#CardNumber').val();
+                var options = { "backdrop": "static", keyboard: true };
+                $.ajax({
+                    type: "GET",
+                    url: TeamEditPostBackURL,
+                    contentType: "application/json; charset=utf-8",
+                    data: {
+                        "fn": firstName,
+                        "mi": middleInitial,
+                        "ln": lastName,
+                        "Email": email,
+                        "Phone": phone,
+                        "id": studentId,
+                        "cn": cardNumber
+                    },
+                    datatype: "json",
+                    success: function (data) {
+                        $('#myModalContent').html(data);
+                        $('#myModal').modal(options);
+                        $('#myModal').modal('show');
+                    },
+                    error: function () {
+                        alert("Dynamic content load failed.");
+                    }
+                });
+            });
+
+
+            $("#closbtn").click(function () {
+                $('#myModal').modal('hide');
+            });
+        });
+    </script>
+}

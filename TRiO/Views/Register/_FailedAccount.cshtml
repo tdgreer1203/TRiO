@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+<div style="height:150px;">
+    <div class="modal-header" id="failModalHeader">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Duplicate Account</h4>
+    </div>
+    <div class="modal-body" id="failedModalBody">
+        <p>An account with this ID or card number already exists. Please try signing in.</p>
+        @Html.ActionLink("SIGN IN", "Index", "Home", null, new { @class = "btn btn-default" })
+        <button class="btn btn-danger pull-right" type="button" data-dismiss="modal">CLOSE</button>
+    </div>
+</div>
+
+

@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;
+}
+<div style="height:150px;">
+    <div class="modal-header" id="successModalHeader">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Account Created</h4>
+    </div>
+    <div class="modal-body" id="successModalBody">
+        <p>Your account has been create. You may now sign in.</p>
+        @Html.ActionLink("SIGN IN", "Index", "Home", null, new { @class = "btn btn-success" })
+        <button class="btn btn-danger pull-right" type="button" data-dismiss="modal">CLOSE</button>
+    </div>
+</div>
+

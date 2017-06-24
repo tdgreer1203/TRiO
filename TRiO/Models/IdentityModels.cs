@@ -24,6 +24,7 @@ namespace TRiO.Models
         public DbSet<Building> Buildings { get; set; }
         public DbSet<Lab> Labs { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Session> Sessions { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

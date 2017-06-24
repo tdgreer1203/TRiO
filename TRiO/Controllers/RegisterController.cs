@@ -8,6 +8,7 @@ using TRiO.Models;
 
 namespace TRiO.Controllers
 {
+    [OutputCacheAttribute(VaryByParam = "*", Duration = 0, NoStore = true)]
     public class RegisterController : Controller
     {
         private ApplicationDbContext _context;
@@ -36,11 +37,11 @@ namespace TRiO.Controllers
 
             if(String.IsNullOrEmpty(fn) || String.IsNullOrEmpty(ln) || String.IsNullOrEmpty(email) || string.IsNullOrEmpty(id))
             {
-                return PartialView("_FailedBlank");
+                return PartialView($"_FailedBlank");
             }
             else if(students.Any(s => s.StudentId == id || s.CardNumber == cn))
             {
-                return PartialView("_FailedAccount");
+                return PartialView($"_FailedAccount");
             }
             else
             {
@@ -56,8 +57,16 @@ namespace TRiO.Controllers
                 _context.Students.Add(student);
                 _context.SaveChanges();
 
-                return PartialView("_Success");
+                return PartialView($"_Success");
             }
+        }
+
+        public Student GetStudent(string id)
+        {
+            students = _context.Students;
+            var student = _context.Students.FirstOrDefault(m => m.StudentId == id || m.CardNumber == id);
+
+            return student;
         }
     }
 }

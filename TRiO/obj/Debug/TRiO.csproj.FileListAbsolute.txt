@@ -198,3 +198,6 @@ C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.dll
 C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.pdb
 C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.Migrations.AddedMIToStudent.resources
 C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.Migrations.ChangedInitialToString.resources
+C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.Migrations.PopulateDepartments.resources
+C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.Migrations.PopulateLabs.resources
+C:\Users\Theo\Documents\GitHub\TRiO\TRiO\obj\Debug\TRiO.Migrations.InitialCommit1.resources

@@ -23,7 +23,7 @@
         <div class="form-group">
             <center>
                 <br />
-                @Html.TextBoxFor(m => m.Id, new { @class = "form-control", autofocus = "" })
+                @Html.TextBoxFor(m => m.Id, new { @class ="form-control text-center", autofocus = "" })
                 <br />
             </center>
         </div>
@@ -48,9 +48,7 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script>
 
-
-
-        var TeamEditPostBackURL = '/Home/CreateSession'; 
+        var TeamEditPostBackURL = '/Home/CreateSession';
         $(function () {
             $(".anchorAlert").click(function () {
                 var $buttonClicked = $(this);
@@ -73,10 +71,15 @@
                 });
             });
 
-
             $("#closbtn").click(function () {
                 $('#myModal').modal('hide');
             });
         });
+
+        $("#myModal").on("hidden.bs.modal", function () {
+            $('#Id').val('');
+            $('#Id').focus();
+        });
+
     </script>
 }

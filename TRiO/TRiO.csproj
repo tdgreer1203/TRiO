@@ -211,6 +211,18 @@
     <Compile Include="Migrations\201706161311266_ChangedInitialToString.Designer.cs">
       <DependentUpon>201706161311266_ChangedInitialToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706230223114_PopulateDepartments.cs" />
+    <Compile Include="Migrations\201706230223114_PopulateDepartments.Designer.cs">
+      <DependentUpon>201706230223114_PopulateDepartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706230243192_PopulateLabs.cs" />
+    <Compile Include="Migrations\201706230243192_PopulateLabs.Designer.cs">
+      <DependentUpon>201706230243192_PopulateLabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706230327056_InitialCommit1.cs" />
+    <Compile Include="Migrations\201706230327056_InitialCommit1.Designer.cs">
+      <DependentUpon>201706230327056_InitialCommit1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Building.cs" />
@@ -281,11 +293,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\_Failed.cshtml" />
-    <Content Include="Views\Home\_Success.cshtml" />
+    <Content Include="Views\Home\_LoggedIn.cshtml" />
     <Content Include="Views\Register\_Success.cshtml" />
     <Content Include="Views\Register\_FailedBlank.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Register\_FailedAccount.cshtml" />
+    <Content Include="Views\Home\_LoggedOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +330,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706161311266_ChangedInitialToString.resx">
       <DependentUpon>201706161311266_ChangedInitialToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706230223114_PopulateDepartments.resx">
+      <DependentUpon>201706230223114_PopulateDepartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706230243192_PopulateLabs.resx">
+      <DependentUpon>201706230243192_PopulateLabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706230327056_InitialCommit1.resx">
+      <DependentUpon>201706230327056_InitialCommit1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
